@@ -1,8 +1,10 @@
-include ../../../vars.mak
-
-HOME=../../../
 
 default: build_probable-potato
 
+.PHONY: build_probable-potato
+
+HOME = "../../.."
+
 build_probable-potato: main.cpp
-	${GXX} ${GXXFLAGS} main.cpp -o ${HOME}/bin/probable-potato
+	@echo "Starting compilation of 'probable-potato'"
+	${GXX} ${GXXFLAGS} main.cpp -o "${TARGET_DIR}/probable-potato"

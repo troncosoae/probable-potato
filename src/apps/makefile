@@ -1,15 +1,10 @@
-include ../../vars.mak
+default: subdirs
 
-HOME=../../
+SUBDIRS = probable-potato
 
-default: make_all
+.PHONY: subdirs $(SUBDIRS)
 
-make_all:
-	@echo "Starting compilation of 'apps'"
-	${MAKE} probable-potato
+subdirs: $(SUBDIRS)
 
-probable-potato:
-	cd probable-potato
-	${MAKE}
-	cd ..
-
+$(SUBDIRS):
+	$(MAKE) -C $@

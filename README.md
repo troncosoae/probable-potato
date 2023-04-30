@@ -14,8 +14,15 @@ Here goes the description...
 make
 ```
 
+#### Compile with debug 
+
+```
+make debug
+```
+
 ### Run 
 
 ```
-./bin/probable-potato
+./bin/rel/probable-potato
 ```
+

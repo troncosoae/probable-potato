@@ -1,14 +1,14 @@
-include ../vars.mak
 
-HOME=../
+default: subdirs
 
-default: make_all
+SUBDIRS = apps
 
-make_all:
-	@echo "Starting comiplation of src"
-	${MAKE} apps
+.PHONY: subdirs $(SUBDIRS)
 
-apps: 
-	@echo "comipling 'apps'"
-	cd apps
-	${MAKE}
+subdirs: $(SUBDIRS)
+
+$(SUBDIRS):
+	$(MAKE) -C $@
+
+# Check this for reference to directory compilation order:
+# https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html
